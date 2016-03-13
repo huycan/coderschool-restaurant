@@ -1,0 +1,34 @@
+<h1>Current order for</h1>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Section</th>
+      <th>Views</th>
+      <th>Image url</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order.food_items.each do |food_item| %>
+      <tr>
+        <td><%= food_item.name %></td>
+        <td><%= food_item.description %></td>
+        <td><%= food_item.price %></td>
+        <td><%= food_item.section %></td>
+        <td><%= food_item.views %></td>
+        <td><%= image_tag food_item.img_url, alt: food_item.name %></td>
+        <td><%= link_to 'Show', food_item %></td>
+        <td><%= link_to 'Edit', edit_food_item_path(food_item) %></td>
+        <td><%= link_to 'Destroy', food_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Order', food_item_orders_path(food_item) %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

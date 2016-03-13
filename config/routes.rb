@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  resources :food_items
+  # get 'orders/index'
+
+  # get 'orders/deliver'
+
+  # get 'orders/bill'
+
+  resources :food_items do
+    resources :orders, only: [:index]
+  end
   
+  resources :orders, only: [:show, :update]
+
   get 'menu' => 'menu#index'
 
   get 'contact' => 'welcome#contact'
