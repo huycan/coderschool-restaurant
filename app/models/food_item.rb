@@ -1,4 +1,6 @@
 class FoodItem < ActiveRecord::Base
+  has_many :order_items
+  
   scope :by_section, ->(section) { where('section ilike ?', section) if section.present? }
   
   scope :sort_by_alpha, -> { order :name }
@@ -27,6 +29,10 @@ class FoodItem < ActiveRecord::Base
   end
 
   def view
-    update views: self.views + 1
+    update views: self[:views] + 1
+  end
+
+  def order_count
+    self[:order_items].count
   end
 end

@@ -52,8 +52,10 @@ The following **known issues**:
 
 ### TODOS
 
-* [ ] Add model validations.
+* [ ] Enforce DKNF.
 * [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/).
+* [ ] Add user sessions and integrate the shopping cart.
+* [ ] Add admin interface for CRUD food items.
 * [ ] Move mailer to background job queue.
 
 ## Video Walkthrough
