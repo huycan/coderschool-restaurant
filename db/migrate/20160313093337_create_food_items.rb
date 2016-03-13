@@ -6,6 +6,7 @@ class CreateFoodItems < ActiveRecord::Migration
       t.decimal :price
       t.string :section
       t.string :image_url
+      t.integer :views, default: 0
 
       t.timestamps null: false
     end

@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20160313093337) do
     t.decimal  "price"
     t.string   "section"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "views",       default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
