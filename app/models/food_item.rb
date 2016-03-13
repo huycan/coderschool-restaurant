@@ -1,5 +1,5 @@
 class FoodItem < ActiveRecord::Base
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   
   scope :by_section, ->(section) { where('section ilike ?', section) if section.present? }
   
