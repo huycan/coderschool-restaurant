@@ -1,23 +1,62 @@
-<div>
-  <h1>Thank you for your order</h1>
-  <h4>Name <%= @order.name %></h4>
-  <h4>Phone <%= @order.phone %></h4>
-  <h4>Address <%= @order.address %></h4>
-  <h4>Email <%= @order.email %></h4>
-  <h4>Coupon <%= @order.coupon %></h4>
-  <h4>Last updated <%= @order.updated_at.strftime("%B %-d, %Y %k:%M") %></h4>
-  <h4>Total <%= @order.price %> VND</h4>
+<h1>Thank you for your order</h1>
+  
+<div class='row'>
+  <div class='col s6'>
+    <h5>Name</h5>
+    <%= @order.name || 'N/A' %>
+  </div>
+  
+  <div class='col s6'>
+    <h5>Email</h5>
+    <%= @order.email || 'N/A' %>
+  </div>
+  
 </div>
 
-<% if !@order.active %>
-  <h1>Delivered</h1>
-<% end %>
+<div class='row'>
+  <div class="col s6">
+    <h5>Phone</h5>
+    <%= @order.phone || 'N/A' %>
+  </div>
+  
+  <div class="col s6">
+    <h5>Address</h5>
+    <%= @order.address || 'N/A' %>
+  </div>
+</div>
 
-<div>
+<div class='row'>
+  <div class="col s6">
+    <h5>Coupon</h5>
+    <%= @order.coupon || 'N/A' %>
+  </div>
+
+  <div class="col s6">
+    <h5>Total</h5>
+    <%= @order.price %> VND
+  </div>
+</div>
+
+<div class='row'>
+  <div class="col s6">
+    <h5>Last updated</h5>
+    <%= @order.updated_at.strftime("%B %-d, %Y %k:%M") %>
+  </div>
+
+  <div class="col s6">
+    <h5>Status</h5>
+    <%= @order.active ? 'In progress' : 'Delivered' %>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<h2>Ordered food</h2>
+<div class='row'>
   <table>
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Food Name</th>
         <th>Price</th>
       </tr>
     </thead>
@@ -33,7 +72,10 @@
   </table>
 </div>
 
-<% if @order.active %>
-  <%= link_to 'Update shipping details', edit_order_path(@order) %>
-  <%= link_to 'Deliver', deliver_order_path(@order), method: :post  %>
-<% end %>
+<div class='row'>
+  <% if @order.active %>
+    <%= link_to 'Edit shipping details', edit_order_path(@order), class: 'btn waves-effect waves-light' %>
+    <%= link_to 'Deliver', deliver_order_path(@order), method: :post, class: 'btn waves-effect waves-light'  %>
+  <% end %>
+</div>
+
