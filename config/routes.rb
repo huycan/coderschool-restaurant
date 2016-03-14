@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'contact' => 'welcome#contact'
 
+  get 'cart' => 'orders#show'
+
   post 'orders/:id/deliver' => 'orders#deliver', as: :deliver_order
 
   # The priority is based upon order of creation: first created -> highest priority.
