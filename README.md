@@ -1,12 +1,12 @@
-# CoderRestaurant Website
+# don'T eaT here Website
 
-**Coder Restaurant** is a Ruby on Rails restaurant website let users order foods.
+**don'T eaT here** is a Ruby on Rails restaurant website let users order foods.
 
 Submitted by: **Tran Duc Huy**
 
-Time spent: **8** hours spent in total
+Time spent: **9** hours spent in total
 
-URL: **heroku-app-url**
+URL: **https://shielded-eyrie-68597.herokuapp.com**
 
 ## User Stories
 
@@ -48,17 +48,18 @@ URL: **heroku-app-url**
 
 ### Personal TODOs
 
+* [ ] Switch to another mail client ASAP.
 * [ ] Enforce DKNF.
 * [ ] Add Flash alerts.
 * [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/). Current UI is ugly.
 * [ ] Add admin interface for CRUD food items.
-* [ ] Move mailer to background job queue.
+* [ ] Move mailer to active job queue.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](walkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
