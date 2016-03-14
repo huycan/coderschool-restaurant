@@ -53,8 +53,8 @@ The following **known issues**:
 ### TODOS
 
 * [ ] Enforce DKNF.
+* [ ] Add Flash alerts.
 * [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/).
-* [ ] Add user sessions and integrate the shopping cart.
 * [ ] Add admin interface for CRUD food items.
 * [ ] Move mailer to background job queue.
 

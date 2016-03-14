@@ -1,34 +1,39 @@
-<h1>Current order for</h1>
+<div>
+  <h1>Thank you for your order</h1>
+  <h4>Name <%= @order.name %></h4>
+  <h4>Phone <%= @order.phone %></h4>
+  <h4>Address <%= @order.address %></h4>
+  <h4>Email <%= @order.email %></h4>
+  <h4>Coupon <%= @order.coupon %></h4>
+  <h4>Last updated <%= @order.updated_at.strftime("%B %-d, %Y %k:%M") %></h4>
+  <h4>Total <%= @order.price %> VND</h4>
+</div>
 
+<% if !@order.active %>
+  <h1>Delivered</h1>
+<% end %>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Section</th>
-      <th>Views</th>
-      <th>Image url</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @order.food_items.each do |food_item| %>
+<div>
+  <table>
+    <thead>
       <tr>
-        <td><%= food_item.name %></td>
-        <td><%= food_item.description %></td>
-        <td><%= food_item.price %></td>
-        <td><%= food_item.section %></td>
-        <td><%= food_item.views %></td>
-        <td><%= image_tag food_item.img_url, alt: food_item.name %></td>
-        <td><%= link_to 'Show', food_item %></td>
-        <td><%= link_to 'Edit', edit_food_item_path(food_item) %></td>
-        <td><%= link_to 'Destroy', food_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Order', food_item_orders_path(food_item) %>
+        <th>Name</th>
+        <th>Price</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @order.food_items.each do |food_item| %>
+        <tr>
+          <td><%= food_item.name %></td>
+          <td><%= food_item.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% if @order.active %>
+  <%= link_to 'Update shipping details', edit_order_path(@order) %>
+  <%= link_to 'Deliver', deliver_order_path(@order), method: :post  %>
+<% end %>

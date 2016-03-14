@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-  # get 'orders/index'
-
-  # get 'orders/deliver'
-
-  # get 'orders/bill'
 
   resources :food_items do
     resources :orders, only: [:index]
   end
   
-  resources :orders, only: [:show, :update]
+  resources :orders, only: [:show, :edit, :update]
 
   get 'menu' => 'menu#index'
 
   get 'contact' => 'welcome#contact'
+
+  post 'orders/:id/deliver' => 'orders#deliver', as: :deliver_order
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
