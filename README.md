@@ -50,10 +50,11 @@ The following **known issues**:
 
 * List bugs or things that don't work yet
 
-### TODOS
+### Personal TODOs
 
 * [ ] Enforce DKNF.
 * [ ] Add Flash alerts.
+* [ ] Practice with Materialize.
 * [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/).
 * [ ] Add admin interface for CRUD food items.
 * [ ] Move mailer to background job queue.

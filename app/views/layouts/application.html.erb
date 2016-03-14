@@ -5,8 +5,30 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
+
 <body>
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+    	<%= link_to "don'T eaT here", root_path, class: 'brand-logo' %>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to '<i class="material-icons left">menu</i>Menu'.html_safe, menu_path %></li>
+        <li><%= link_to '<i class="material-icons left">contacts</i>Contact'.html_safe, contact_path %></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
 <%= yield %>
 
