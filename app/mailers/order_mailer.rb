@@ -7,4 +7,8 @@ class OrderMailer < ApplicationMailer
 
     mail to: customer_email, subject: 'CoderRestaurant confirms your order'
   end
+
+  def notify_owner
+    mail to: 'td.huycan@gmail.com', subject: 'Someone places an order for CoderRestaurant'
+  end
 end
