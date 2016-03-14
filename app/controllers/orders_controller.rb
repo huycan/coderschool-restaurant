@@ -28,7 +28,14 @@ class OrdersController < ApplicationController
 
   def deliver
     @order.update active: false
-    redirect_to order_path(params[:id])
+
+    if @order.email.present
+      OrderMailer.confirm_order(@order.email, @order.name, order_path(@order.id)).deliver_now
+    end
+
+    OrderMailer.notify_owner.deliver_now
+
+    redirect_to order_path(@order.id)
   end
 
   private
