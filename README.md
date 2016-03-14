@@ -20,7 +20,7 @@ URL: **heroku-app-url**
   * [x] Lunch
   * [x] Dinner
   * [x] Drinks
-* [ ] User should see at least 5 food items in each section.
+* [x] User should see at least 5 food items in each section.
 * [x] Each food item should have the following fields:
   * Name (Canh Chua)
   * Description (Delicious fish soup)
@@ -43,8 +43,8 @@ URL: **heroku-app-url**
 * [ ] User can see reviews and an average review score.
 * [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [x] User can order more than one dish at a time.
-* [ ] User receives an email upon placing an order.
-* [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
+* [x] User receives an email upon placing an order.
+* [x] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
 The following **known issues**:
 
