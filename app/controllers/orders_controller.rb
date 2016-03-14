@@ -33,7 +33,10 @@ class OrdersController < ApplicationController
 
   private
     def current_order
-      @order = Order.find params[:id]
+      if params[:id].present?
+        @order = Order.find params[:id]
+      end
+
       @order = Order.create() if @order.nil?
     end
 
