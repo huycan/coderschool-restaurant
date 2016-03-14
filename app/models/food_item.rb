@@ -13,13 +13,13 @@ class FoodItem < ActiveRecord::Base
   
   scope :sort, ->(sort) {
     case sort
-    when 'alphabetical'
+    when 'Alpha'
       sort_by_alpha
-    when 'price low to high'
+    when 'Cheapest'
       sort_by_cheapest
-    when 'price high to low'
+    when 'Most Expensive'
       sort_by_most_expensive
-    when 'most viewed'
+    when 'Views'
       sort_by_view
     end
   }

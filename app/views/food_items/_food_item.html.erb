@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <%= image_tag food_item.img_url, alt: food_item.name, class: 'activator' %>
+  </div>
+
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">
+      <%= food_item.name %>
+      <span class="badge"><%= pluralize food_item.views, "view" %></span>      
+      <i class="material-icons">more_vert</i>
+    </span>
+
+    <p><%= link_to 'Order'.html_safe, food_item_orders_path(food_item), class: 'waves-effect waves-light btn' %></p>
+  </div>
+
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">
+      <%= food_item.name %>
+      <i class="material-icons right">close</i>
+    </span>
+    <p>
+      <h5>Description</h5>
+      <%= food_item.description %>
+      <h5>Price</h5>
+      <%= food_item.price %> VND
+      <h5>Section</h5>
+      <%= food_item.section %>
+    </p>
+  </div>
+</div>
