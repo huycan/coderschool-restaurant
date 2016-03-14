@@ -9,7 +9,7 @@ class FoodItem < ActiveRecord::Base
 
   scope :sort_by_most_expensive, -> { order price: :desc }
 
-  scope :sort_by_view, -> { order views: :desc }
+  scope :sort_by_order, -> { order views: :desc }
   
   scope :sort, ->(sort) {
     case sort
@@ -19,8 +19,8 @@ class FoodItem < ActiveRecord::Base
       sort_by_cheapest
     when 'Most Expensive'
       sort_by_most_expensive
-    when 'Views'
-      sort_by_view
+    when 'Orders'
+      sort_by_order
     end
   }
 

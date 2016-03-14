@@ -5,6 +5,8 @@ class OrdersController < ApplicationController
   def index
     @order.order_items.create(food_item_id: params[:food_item_id])
     
+    FoodItem.find(params[:food_item_id]).view
+
     redirect_to order_path(@order.id)
   end
 
@@ -29,7 +31,7 @@ class OrdersController < ApplicationController
   def deliver
     @order.update active: false
 
-    if @order.email.present
+    if @order.email.present?
       OrderMailer.confirm_order(@order.email, @order.name, order_path(@order.id)).deliver_now
     end
 

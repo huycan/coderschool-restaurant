@@ -46,16 +46,11 @@ URL: **heroku-app-url**
 * [x] User receives an email upon placing an order.
 * [x] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
-The following **known issues**:
-
-* List bugs or things that don't work yet
-
 ### Personal TODOs
 
 * [ ] Enforce DKNF.
 * [ ] Add Flash alerts.
-* [ ] Practice with Materialize.
-* [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/).
+* [ ] Overhaul UI to look as slick as [L'Usine](http://lusinespace.com/). Current UI is ugly.
 * [ ] Add admin interface for CRUD food items.
 * [ ] Move mailer to background job queue.
 
