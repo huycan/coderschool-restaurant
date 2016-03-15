@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
   end
 
   def delivery_fee
-    20000 if order_items.count > 0 else 0
+    order_items.count > 0 ? 20000 : 0
   end
 
   def price
